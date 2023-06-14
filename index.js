@@ -9,12 +9,15 @@ const app = express();
 app.use(cors())
 app.use(express.json());
 // console.log(os.userInfo())
+let arr =[]
 
 app.post("/", async(req, res)=>{
     try {
-        let details = os.userInfo()
+        let details = os.userInfo();
+        arr.push(details)
         let newUser = new Modal(details)
         await newUser.save()
+        console.log(arr)
         res.send("hello")
     } catch (error) {
         console.log(error)
