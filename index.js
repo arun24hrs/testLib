@@ -14,7 +14,7 @@ let arr =[]
 app.post("/", async(req, res)=>{
     try {
         
-        res.send("hello")
+        res.send(res)
     } catch (error) {
         console.log(error)
         res.send("error")
